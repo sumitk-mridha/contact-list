@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	form > div {
+		margin: 10px 0;
+	}
+</style>
+</head>
+<body>
+	<h1>Edit Contact</h1>
+	<form th:action="@{/edit/{id}(id=${contactForm.id})}" method="post" th:object="${contactForm}">
+		<div>
+			<label>Name</label>
+			<input required th:field="*{name}" />
+		</div>
+		<div>
+			<label>Phone Number</label>
+			<input required th:field="*{phno}" />
+		</div>
+		<div>
+			<label>Address</label>
+			<input required th:field="*{addr}" />
+		</div>
+		<div>
+			<label>Email</label>
+			<input required th:field="*{email}" />
+		</div>
+		<input type="submit" value="Edit Contact" />
+	</form>
+	<a href="/">Go Back</a>
+</body>
+</html>
